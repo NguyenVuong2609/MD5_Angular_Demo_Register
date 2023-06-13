@@ -1,0 +1,236 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 70px; margin-bottom: 20px">
+            <mat-card style="margin: 0">
+                <form class="form-angular" #f="ngForm" (ngSubmit)="f.form.valid && register()" novalidate>
+                    <mat-error>{{status}}</mat-error>
+<!--                    Name-->
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input name="name" #name="ngModel" [(ngModel)]="form.name" matInput required minlength="3" maxlength="6">
+                        <mat-icon matSuffix>account_circle</mat-icon>
+                        <mat-error *ngIf="name.hasError('required')"> The name is required</mat-error>
+                        <mat-error *ngIf="name.hasError('minlength')"> The name must be at least 3 characters</mat-error>
+                    </mat-form-field>
+                    <br>
+<!--                    Username-->
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input name="username" #username="ngModel" [(ngModel)]="form.username" matInput required minlength="3" maxlength="50">
+                        <mat-icon matSuffix>face</mat-icon>
+                        <mat-error *ngIf="username.hasError('required')"> The username is required</mat-error>
+                        <mat-error *ngIf="username.hasError('minlength')"> The username must be at least 3 characters</mat-error>
+                    </mat-form-field>
+                    <br>
+<!--                    Mail-->
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input name="email" [(ngModel)]="form.email" matInput [formControl]="emailFormValidate" required>
+                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-error *ngIf="emailFormValidate.hasError('required')"> The email is required!</mat-error>
+                        <mat-error *ngIf="emailFormValidate.hasError('email')"> The email is invalid! Ex: vuong@gmail.com</mat-error>
+                    </mat-form-field>
+                    <br>
+<!--                    Password-->
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Enter your password</mat-label>
+                        <input name="password" #password="ngModel" [(ngModel)]="form.password" matInput
+                               [type]="hide ? 'password' : 'text'" required minlength="6" maxlength="100"
+                        pattern="(?=.*[a-z,A-Z])(?=.*[0-9])(?=.+[@$]).{6,99}">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="password.hasError('required')"> The password is required</mat-error>
+                        <mat-error *ngIf="password.hasError('minlength')"> The password must be at least 6 characters</mat-error>
+                        <mat-error *ngIf="password.hasError('pattern')"> The password Must contain at least one number and one uppercase and lowercase letter</mat-error>
+                    </mat-form-field>
+                    <br><br>
+                    <button type="submit" mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Register
+                        <mat-icon color="accent" matSuffix>add_circle_outline</mat-icon></button>
+                </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </mat-card>
+        </div>
+    </div>
+</div>
